@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { axiosWithAuth } from '../utils/axiosWithAuth'
+import { Form, Input, Button } from 'reactstrap'
 
 const Login = props => {
 
@@ -27,21 +28,22 @@ const Login = props => {
   }
 
   return (
-    <form onSubmit={login}>
-      <input
+    <Form onSubmit={login} className="login-form">
+      Login to view the color list
+      <Input
         type="text"
         name="username"
         value={credentials.username}
         onChange={handleChange}
       />
-      <input
+      <Input
         type="text"
         name="password"
         value={credentials.password}
         onChange={handleChange}
       />
-      <button>Login in</button>
-    </form>
+      <Button color="primary" outline >Login in</Button>
+    </Form>
   )
 }
 
